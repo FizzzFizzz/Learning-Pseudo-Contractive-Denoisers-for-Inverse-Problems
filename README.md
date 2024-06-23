@@ -2,7 +2,7 @@
 
 This is the code for the paper `Learning Pseudo-Contractive Denoisers for Inverse Problems', accepted by Internation Conference on Machine Learning (ICML 2024). For the papar, see [ICML](https://openreview.net/forum?id=G0vZ5ENrJQ&noteId=G0vZ5ENrJQ), or [Arxiv](https://arxiv.org/abs/2402.05637). Please note that there are some differences between the ICML version and the Arxiv version.
 
-20240620: 
+> 20240620: 
 If you want to test it on your own, it would be beneficial if you are familiar with DPIR (https://github.com/cszn/DPIR), LMMO (https://github.com/basp-group/PnP-MMO-imaging), and Prox-PnP (https://github.com/samuro95/Prox-PnP). The code is based on these pioneer projects.
 
 How to test?
@@ -29,5 +29,21 @@ We have also found that ensuring strictly pseudo-contractiveness on the residual
 
 I'm not a very good coder, and the code is still under improvement. Please feel free to contact me if you find it confusing, boring, terrible, or interesting and helpful!
 
-20240621: 
+> 20240621: 
 We are still organizing the codes. The codes will be under improvement, at least before September, 2024.
+
+
+
+> 20240623 Update: 
+We are currently retraining each denoisers (MMO, NE-DRUNet, SPC-DRUNet with different $k$, and PC-DRUNet) with power iterative method and a modified power iterative method, in the repo [New baseline](https://github.com/FizzzFizzz/New-baseline-for-DRUNet-under-different-assumptions). 
+
+In this new repo, different from the original paper, each method is trained with the (modified) power iterative method with 15 iterations. The average value and the standard derivations of the spectral norms (such as ||2J-I||_* for MMO, ||J||_* for NE-DRUNet) evaluated at different images after training is denoted by Mean and Std, respectively. The balancing parameter r in the loss function is chosen to be small enough, such that,
+
+$ Mean + 3 * Std <=1. $
+
+Therefore, this new repo provides a more accurate evaluation for each denoiser. We will continue updating the denoising performance results, and the PnP restoration results in this repo. This will serve as a new baseline.
+
+
+
+
+
