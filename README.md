@@ -33,15 +33,16 @@ I'm not a very good coder, and the code is still under improvement. Please feel 
 >> We are still organizing the codes. The codes will be under improvement, at least before September, 2024.
 
   
+20240623 Update: 
+----
 
-> 20240623 Update: 
->> We are currently retraining each denoisers (MMO, NE-DRUNet, SPC-DRUNet with different $k$, and PC-DRUNet) with power iterative method and a modified power iterative method, in the repo [New baseline](https://github.com/FizzzFizzz/New-baseline-for-DRUNet-under-different-assumptions). 
+> We are currently retraining each denoisers (MMO, NE-DRUNet, SPC-DRUNet with different $k$, and PC-DRUNet) with power iterative method and a modified power iterative method, in the repo [New baseline](https://github.com/FizzzFizzz/New-baseline-for-DRUNet-under-different-assumptions). In this new repo, you may find that the PnPI restoration results are sometimes better than the original paper (for PnPI-GD and PnPI-FBS), and sometimes worse (for PnPI-AHQS). 
 
->> In this new repo, different from the original paper, each method is trained with the (modified) power iterative method with 15 iterations. The average value and the standard derivations of the spectral norms (such as $`||2J-I||_*`$ for MMO, $`||J||_*`$ for NE-DRUNet) evaluated at different images after training is denoted by Mean and Std, respectively. The balancing parameter r in the loss function is chosen to be large enough, such that,
+> In this new repo, different from the original paper, each method is trained with the (modified) power iterative method with 15 iterations. The average value and the standard derivations of the spectral norms (such as $`||2J-I||_*`$ for MMO, $`||J||_*`$ for NE-DRUNet) evaluated at different images after training is denoted by Mean and Std, respectively. The balancing parameter r in the loss function is chosen to be large enough, such that,
 
->> $` Mean + 3 * Std \le 1. `$
+> $` Mean + 3 * Std \le 1. `$
 
->> Therefore, this new repo provides a more accurate evaluation for each denoiser. We will continue updating the denoising performance results, and the PnP restoration results in this repo. This will serve as a new baseline.
+> Therefore, this new repo provides a more accurate evaluation for each denoiser. We will continue updating the denoising performance results, and the PnP restoration results in this repo. This will serve as a new baseline.
 
 
 
