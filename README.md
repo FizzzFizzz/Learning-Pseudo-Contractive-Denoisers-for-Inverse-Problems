@@ -5,6 +5,18 @@ This is the code for the paper `Learning Pseudo-Contractive Denoisers for Invers
 > 20240620: 
 If you want to test it on your own, it would be beneficial if you are familiar with DPIR (https://github.com/cszn/DPIR), LMMO (https://github.com/basp-group/PnP-MMO-imaging), and Prox-PnP (https://github.com/samuro95/Prox-PnP). The code is based on these pioneer projects.
 
+
+
+Note
+---
+Please note that: we are currently retraining each denoisers (MMO, NE-DRUNet, SPC-DRUNet with different $k$, and PC-DRUNet) with power iterative method and a modified power iterative method, in the repo [New baseline](https://github.com/FizzzFizzz/New-baseline-for-DRUNet-under-different-assumptions). You may find that the PnPI restoration results in this new repo are significantly better than the original paper (for PnPI-GD and PnPI-FBS), and have more stable PnP iterations without the need to decrease the denoising strength (for PnPI-HQS). For this reason, we strongly recommend [New baseline](https://github.com/FizzzFizzz/New-baseline-for-DRUNet-under-different-assumptions).
+
+
+
+
+
+
+
 How to test?
 ----
 Step 1: Create env according to DPIR and Prox-PnP.
